@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <canvas id="canvas" style="border: 1px solid pink;" height="500px" width="1000px"></canvas>
+  <script>
+    let canvas = document.querySelector('#canvas');
+    let context = canvas.getContext('2d');
+    context.fillStyle = "pink";
+    context.strokeStyle = "darkred";
+    context.beginPath();
+    context.moveTo(100,150);
+    context.lineTo(200,250);
+    context.stroke();
+    context.moveTo(200,250);
+    context.lineTo(400,350);
+    context.lineTo(400,450);
+    context.strokeStyle = "black";
+
+    // context.moveTo(100,150);
+    // context.lineTo(300,450);
+    context.closePath();
+    context.stroke();
+    function drawSector(ctx, x, y, r, sReg, eReg) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.beginPath();
+      ctx.arc(0, 0, r, sReg, eReg, false);
+      ctx.save();
+      ctx.rotate(eReg);
+      ctx.moveTo(r, 0);
+      ctx.lineTo(0, 0);
+      ctx.restore();
+      ctx.rotate(sReg);
+      ctx.moveTo(r, 0);
+      ctx.lineTo(0, 0);
+      // ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
+    }
+    // drawSector(context, 100, 100, 50, 0, Math.PI / 3);
+    // drawSector(context, 100, 100, 50, Math.PI / 3, Math.PI / 2);
+    
+  </script>
+</body>
+</html>
