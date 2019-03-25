@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Carousel</title>
+  <style>
+    #carousel {
+      width: 500px;
+      height: 300px;
+      margin: 0 auto;
+      border: 1px solid #444;
+      overflow: hidden;
+    }
+    #carousel #list {
+      transform: translateZ(0);
+      transition: left 1s ease-in-out;
+      text-align: center;
+      width: 400%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+    }
+
+    #carousel:hover #prev, #carousel:hover #next {
+      opacity: 1;
+    }
+
+    #carousel #list img {
+      user-select: none;
+      float: left;
+      width: 500px;
+    }
+    #carousel #prev, #carousel #next {
+      user-select: none;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #777;
+      opacity: 0.5;
+      font-size: 30px;
+      text-align: center;
+      vertical-align: middle;
+      transform: translate(0, -50%);
+    }
+    #carousel #prev {
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+    #carousel #next {
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+    #carousel #buttons{
+      user-select: none;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    #carousel #buttons span {
+      margin-left: 5px;
+    }
+    #carousel #buttons span::after {
+
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #aaa;
+      border: 1px solid #777;
+      content: '';
+      border-radius: 3px;
+    }
+    #carousel #buttons span.active::after {
+      background-color: deeppink;
+    }
+  </style>
+</head>
+<body>
+  <div id="carousel">
+    
+  </div>
+</body>
+</html>
