@@ -15,9 +15,7 @@
     }
     #carousel #list {
       transform: translateZ(0);
-      transition: left 1s ease-in-out;
       text-align: center;
-      width: 400%;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -33,7 +31,9 @@
     #carousel #list img {
       user-select: none;
       float: left;
+      overflow: hidden;
       width: 500px;
+      height: 300px;
     }
     #carousel #prev, #carousel #next {
       user-select: none;
@@ -68,7 +68,6 @@
       margin-left: 5px;
     }
     #carousel #buttons span::after {
-
       display: inline-block;
       width: 6px;
       height: 6px;

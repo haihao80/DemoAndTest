@@ -1,4 +1,4 @@
-import Carousel from '../carousel/carousel.js';
+import Carousel from '../carousel/carousel-infinite';
 
 
 let carousel = new Carousel({
